@@ -17,7 +17,7 @@ const DashboardPage = () => {
           <ModuleBtn
             name={"Product Module"}
             icon={<HiCircleStack className=" size-12" />}
-            url={"/dashboard/product"}
+            url={"/dashboard/products"}
           />
         </div>
         <div className=" col-span-1">

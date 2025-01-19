@@ -1,5 +1,6 @@
 import DashboardLayout from "../features/dashboard/components/DashboardLayout";
 import DashboardPage from "../features/dashboard/pages/DashboardPage";
+import productRoute from "./productRoute";
 
 const dashboardRoute = [
     {path:"/dashboard",
@@ -9,6 +10,7 @@ const dashboardRoute = [
             index: true,
             element: <DashboardPage />
         },
+        ...productRoute
     ]
 },
 ]

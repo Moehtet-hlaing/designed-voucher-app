@@ -1,9 +1,10 @@
-import { useEffect } from 'react'
+import { Suspense, useEffect } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import reactUseCookie from 'react-use-cookie'
 import useUserStore from '../../../stores/useUserStore'
 import Header from './Header'
+import PageLoading from '../../../components/PageLoading'
 
 const DashboardLayout = () => {
   const [token] = reactUseCookie("my_token");
@@ -27,7 +28,9 @@ const DashboardLayout = () => {
   return (
     <main className='flex flex-col min-h-screen p-5'>
     <Header />
-    <Outlet />
+    <Suspense fallback={<PageLoading />}>
+      <Outlet />
+    </Suspense>
     <Toaster position='top-right'/>
     </main>
   )
