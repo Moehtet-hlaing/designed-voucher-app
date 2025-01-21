@@ -31,7 +31,7 @@ const DashboardPage = () => {
           <ModuleBtn
             name={"Voucher Module"}
             icon={<HiDocumentDuplicate className=" size-12" />}
-            url={"/dashboard/voucher"}
+            url={"/dashboard/vouchers"}
           />
         </div>
         <div className=" col-span-1">

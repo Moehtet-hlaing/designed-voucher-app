@@ -35,8 +35,8 @@ const Pagination = ({ meta: { links, from, to, total }, updateFetchUrl }) => {
                 key={link.label}
                 disabled={!link.url}
                 onClick={() => updateFetchUrl(link.url)}
-                className={`flex items-center justify-center size-8  text-slate-600 bg-transparent border text-sm font-medium
-                border-y-slate-600 first:border-s-slate-600 last:border-e-slate-600 first:rounded-s-lg last:rounded-e-lg   disabled:opacity-50 disabled:pointer-events-none ${link.active ? "bg-slate-500 text-white" : ""} disabled:opacity-50 disabled:pointer-events-none`}
+                className={`flex items-center justify-center size-8   bg-transparent border text-sm font-medium
+                border-y-slate-600 first:border-s-slate-600 last:border-e-slate-600 first:rounded-s-lg last:rounded-e-lg   disabled:opacity-50 disabled:pointer-events-none ${link.active ? "bg-slate-600 text-white " : ""} disabled:opacity-50 disabled:pointer-events-none`}
               >
                 {link.label === "&laquo; Previous" ? (
                   <HiArrowLeft />
