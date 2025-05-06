@@ -4,6 +4,7 @@ import reactUseCookie from "react-use-cookie";
 
 const Header = () => {
   const [user] = reactUseCookie("user");
+  const [token] = reactUseCookie("my_token");
   return (
     <header className=" sticky top-0 z-50">
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
@@ -19,7 +20,7 @@ const Header = () => {
             </span>
           </Link>
           <div className="flex items-center lg:order-2">
-           {!user ? (
+           {!token ? (
              <>
              <Link
                to="/login"

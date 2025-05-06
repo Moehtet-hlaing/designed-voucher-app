@@ -19,7 +19,6 @@ const LoginForm = () => {
     console.log(data);
     const res = await login(data);
     const result = await res.json();
-  console.log(result);
     if (res.status === 200) {
       console.log(result);
       setUserCookie(JSON.stringify(result.user));
