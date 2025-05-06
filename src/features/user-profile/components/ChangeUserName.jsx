@@ -2,6 +2,8 @@ import reactUseCookie from "react-use-cookie";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import useUserStore from "../../../stores/useUserStore";
+import { storeUserName } from "../../../services/userProfile";
+import useSWR from "swr";
 
 const ChangeUserName = () => {
 
@@ -18,15 +20,7 @@ const ChangeUserName = () => {
   
     const handleUpdateName = async (data) => {
       // console.log(data);
-      const res = await fetch(import.meta.env.VITE_API_URL + "/user-profile/change-name", {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-          "Authorization": `Bearer ${token}`,
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await storeUserName(data, token);
       const result = await res.json();
       if (res.status === 200) {
         toast.success(result.message);
@@ -57,13 +51,13 @@ const ChangeUserName = () => {
               minLength: 3,
               maxLength: 20,
             })}
+            defaultValue={name}
             className={` bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
           block w-full p-2.5 ${
             errors.name
               ? "border-red-500 focus:border-red-500 focus:ring-red-500"
               : ""
           }`}
-            placeholder="eg.apple"
             required
           />
           {errors.name?.type === "required" && (

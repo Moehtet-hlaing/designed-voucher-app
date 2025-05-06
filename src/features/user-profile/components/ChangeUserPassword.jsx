@@ -2,6 +2,8 @@ import reactUseCookie from "react-use-cookie";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
+import { update } from "lodash";
+import { updatePassword } from "../../../services/userProfile";
 
 const ChangeUserPassword = () => {
     const [userCookie, setUserCookie] = reactUseCookie("user");
@@ -17,15 +19,7 @@ const ChangeUserPassword = () => {
     const navigate = useNavigate();
   
     const handleUpdatePassword = async (data) => {
-      const res = await fetch(import.meta.env.VITE_API_URL + "/user-profile/change-password", {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json",
-          "Authorization": `Bearer ${token}`,
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await updatePassword(data, token);
       const result = await res.json();
       if (res.status === 200) {
         toast.success(result.message);
