@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import reactUseCookie from "react-use-cookie";
 import { authRegister } from '../../../services/auth';
 import ButtonSpinner from '../../../components/ButtonSpinner';
+import toast from 'react-hot-toast';
 
 
 const RegisterForm = () => {
@@ -15,7 +16,6 @@ const RegisterForm = () => {
   const [token,setToken] = reactUseCookie("my_token");
   const navigate = useNavigate();
   const handleRegister = async(data) => {
-    console.log(data);
     const res = await authRegister (data);
     const result = await res.json();
     setToken(result.token);             
