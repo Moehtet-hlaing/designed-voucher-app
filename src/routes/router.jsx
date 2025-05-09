@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import PublicLayout from "../features/static/components/publicLayout";
+import PublicLayout from "../features/static/components/PublicLayout";
 import publicRoute from "./publicRoute";
 import authRoute from "./authRoute";
 import NotFound from "../components/NotFound";
