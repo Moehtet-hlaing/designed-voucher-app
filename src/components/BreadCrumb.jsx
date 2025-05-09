@@ -1,4 +1,3 @@
-import React from "react";
 import { HiChevronRight, HiHome } from "react-icons/hi";
 import { LuChevronLeft, LuChevronRight } from "react-icons/lu";
 import { Link, useNavigate } from "react-router-dom";

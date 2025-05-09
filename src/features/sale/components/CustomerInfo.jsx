@@ -37,7 +37,6 @@ const CustomerInfo = () => {
       const net_total = total + tax;
  
       const currentVoucher = { ...data, records, total, tax, net_total };
-      console.log(currentVoucher);
   
       const res = await storeVoucher(currentVoucher, token);
       const result = await res.json();

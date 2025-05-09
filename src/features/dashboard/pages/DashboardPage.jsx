@@ -1,10 +1,4 @@
-import React from "react";
-import {
-  HiCircleStack,
-  HiDocumentDuplicate,
-  HiMiniComputerDesktop,
-  HiUserCircle,
-} from "react-icons/hi2";
+
 import Container from "../../../components/Container";
 import ModuleBtn from "../components/ModuleBtn";
 import LogOutButton from "../../../components/LogOutButton";

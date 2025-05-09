@@ -14,12 +14,6 @@ const DashboardLayout = () => {
   useEffect(() => {
     setUser(JSON.parse(userCookie));
   },[]);
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (!token) {
-  //     navigate("/");
-  //   }
-  // }, [])
 
 
   if (!token) {

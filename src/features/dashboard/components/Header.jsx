@@ -2,8 +2,7 @@ import Container from "../../../components/Container";
 import useUserStore from "../../../stores/useUserStore";
 
 const Header = () => {
-  // const [userCookie] = reactUseCookie("user");
-  // const {name,email,profile_image} = JSON.parse(userCookie);
+
   const {user:{name,email,profile_image}} = useUserStore();
   return (
     <header className=" mb-5">

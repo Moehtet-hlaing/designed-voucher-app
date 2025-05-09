@@ -1,6 +1,5 @@
 import React from 'react'
 import { useForm } from "react-hook-form";
-import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import reactUseCookie from "react-use-cookie";
 import { authRegister } from '../../../services/auth';

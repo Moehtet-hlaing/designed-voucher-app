@@ -47,7 +47,6 @@ const VoucherCard = () => {
   }
 
   if (isLoading) return <p>Loading...</p>;
-  console.log(data);
   return (
     <div className="flex gap-5">
       <div id="printArea"  className="w-[14.8cm]  mx-auto p-5 bg-white shadow-lg rounded-lg">

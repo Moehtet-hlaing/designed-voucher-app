@@ -1,5 +1,3 @@
-import React from "react";
-import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import {
   LuChevronLeft,
   LuChevronRight,
@@ -27,8 +25,8 @@ const Pagination = ({
   },
   updateFetchUrl,
 }) => {
-  // const handlePrevBtn = () => updateFetchUrl(prev);
-  // const handleNextBtn = () => updateFetchUrl(next);
+
+
   const [params, setParams] = useSearchParams();
   const currentLimit = params.get("limit") ?? 5;
   const pageLimit = [5, 10, 15, 20];
@@ -41,7 +39,7 @@ const Pagination = ({
   return (
     <div className="">
       <div className="flex justify-between items-center p-4">
-        {/* Help text */}
+
         <span className="text-sm text-gray-700 dark:text-gray-400">
           Showing {from} to {to} of {total} Entries
         </span>
@@ -59,7 +57,7 @@ const Pagination = ({
               <option key={index}>{limit}</option>
             ))}
           </select>
-          {/* Buttons */}
+
           <div className="inline-flex ">
             <button
               disabled={!prev}

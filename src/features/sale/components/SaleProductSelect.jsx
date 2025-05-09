@@ -5,7 +5,7 @@ import reactUseCookie from "react-use-cookie";
 import useSaleProductStore from "../../../stores/useSaleProductStore";
 import { fetchProduct } from "../../../services/product";
 
-const SaleProductSelect = () => { 
+const SaleProductSelect = () => {
   const [token] = reactUseCookie("my_token");
   const fetcher = (url) => fetchProduct(url, token);
 
@@ -13,10 +13,10 @@ const SaleProductSelect = () => {
     import.meta.env.VITE_API_URL + "/products?limit=100",
     fetcher
   );
-//   if(isLoading) return <p>Loading...</p>;
-// console.log(data);
-  
-  const {records, addRecord, changeQuantity } = useSaleProductStore();
+  //   if(isLoading) return <p>Loading...</p>;
+  // console.log(data);
+
+  const { records, addRecord, changeQuantity } = useSaleProductStore();
   // console.log(import.meta.env.VITE_API_URL + "/products");
   const {
     register,
@@ -27,11 +27,13 @@ const SaleProductSelect = () => {
   const onSubmit = (data) => {
     const currentProduct = JSON.parse(data.product);
     const currentProductId = currentProduct.id;
-    const isExisted = records.find(({product:{id}}) => id === currentProductId);
-    if (isExisted){
+    const isExisted = records.find(
+      ({ product: { id } }) => id === currentProductId
+    );
+    if (isExisted) {
       changeQuantity(isExisted.product_id, data.quantity);
       reset();
-    } else{
+    } else {
       addRecord({
         // id: Date.now(),
         product: currentProduct,
@@ -43,10 +45,7 @@ const SaleProductSelect = () => {
       toast.success("Record created successfully");
       reset();
     }
-    
   };
-
-
 
   return (
     <div>
@@ -60,22 +59,19 @@ const SaleProductSelect = () => {
               Select Product
             </label>
             <select
-              {...register("product")}
+              {...register("product",{ required: true })}
               required
               id="productSelect"
               // name="product_id"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
               <option value="">Choose a product</option>
-              {!isLoading && 
-              (
+              {!isLoading &&
                 data?.data?.map((product) => (
                   <option key={product.id} value={JSON.stringify(product)}>
                     {product.product_name}
                   </option>
-                ))
-              )
-              }
+                ))}
             </select>
           </div>
           <div className="col-span-1">
@@ -87,15 +83,21 @@ const SaleProductSelect = () => {
                 Your Quantity
               </label>
               <input
-                {...register("quantity")}
+                {...register("quantity", { min: 1})}
                 type="number"
                 id="quantity"
                 name="quantity"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className={`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ${
+                  errors.quantity
+                    ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                    : ""
+                }`}
                 required
               />
+            
             </div>
           </div>
+          
           <div className="col-span-1">
             <button
               type="submit"

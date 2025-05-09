@@ -1,7 +1,5 @@
-import React from 'react'
 import toast from 'react-hot-toast';
 import useSaleProductStore from '../../../stores/useSaleProductStore';
-import { mutate } from 'swr';
 
 const SaleRecordRow = ({record:{product_id,product:{product_name,price},quantity,cost},index}) => {
   const {records,removeRecord, changeQuantity} = useSaleProductStore();
@@ -16,7 +14,7 @@ const SaleRecordRow = ({record:{product_id,product:{product_name,price},quantity
      changeQuantity(product_id,-1);
    }
 
-   {}
+
   return (
     <tr className="record-row border dark:border-gray-700 group">
           

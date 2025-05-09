@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-import { set, useForm } from "react-hook-form";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import useSWR, { useSWRConfig } from "swr";
+import  { useSWRConfig } from "swr";
 import { tailspin } from "ldrs";
 import toast from "react-hot-toast";
 import reactUseCookie from "react-use-cookie";
 import { storeProduct } from "../../../services/product";
 
 tailspin.register();
-
-// const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const ProductCreateCard = () => {
   const {
@@ -19,34 +17,26 @@ const ProductCreateCard = () => {
     reset
   } = useForm();
   const[token] = reactUseCookie("my_token");
-  // const { data, error, isLoading } = useSWR(
-  //   import.meta.env.VITE_API_URL + "/products",
-  //   fetcher
-  // );
-  const { mutate } = useSWRConfig();
+
   const [isSending, setIsSending] = useState(false);
   const navigate = useNavigate();
   const handleCreateProduct = async (data) => {
     try {
       setIsSending(true);
   
-      // Add created_at timestamp
       const { product_name, price, back_to_product_list } = {
         ...data,
         created_at: new Date().toISOString(),
       };
   
-      // Make the API call
       const res = await storeProduct(product_name, price, token);
       if (!res.ok) {
         throw new Error("Failed to create product");
       }
   
-      // Process the response
       const result = await res.json();
       console.log(result);
   
-      // Reset the form and navigate if needed
       reset();
       if (back_to_product_list) {
         navigate("/dashboard/products");

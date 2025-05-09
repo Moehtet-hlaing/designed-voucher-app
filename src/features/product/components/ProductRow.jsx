@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { HiOutlineTrash, HiPencil } from "react-icons/hi";
 import { useSWRConfig } from "swr";
 import toast from "react-hot-toast";

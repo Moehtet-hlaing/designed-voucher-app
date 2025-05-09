@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { HiOutlineTrash, HiPencil, HiPlus, HiSearch } from "react-icons/hi";
+import  { useEffect, useRef, useState } from "react";
+import {  HiPlus, HiSearch } from "react-icons/hi";
 import useSWR from "swr";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import reactUseCookie from "react-use-cookie";
@@ -11,14 +11,11 @@ import Pagination from "../../../components/Pagination";
 import { debounce } from "lodash";
 import { urlToParamObj } from "../../../utils/url";
 import Sortable from "../../../components/Sortable";
-// import { fetchProduct } from "../../../services/product";
 
 const ProductTable = () => {
-  // const [search, setSearch] = useState("");
   const location = useLocation();
   const [token] = reactUseCookie("my_token");
   const searchRef = useRef();
-  //   const fetcher = (url) => fetch(url,{headers:{"Authorization":`Bearer ${token}`}}).then((res) => res.json());
   const [fetchUrl, setFetchUrl] = useState(
     `${import.meta.env.VITE_API_URL}/products` + location.search
   );
@@ -53,15 +50,9 @@ const ProductTable = () => {
     setParams(sortData);
   };
   const updateFetchUrl = (url) => {
-    // const currentUrl = new URL(url);
-    // const newSearchParams = new URLSearchParams(currentUrl.search);
-    // const paramObj = Object.fromEntries(newSearchParams);
-    // console.log(paramObj);
     setParams(urlToParamObj(url));
     setFetchUrl(url);
   };
-    // if (isLoading) return <p>Loading...</p>;
-    // console.log(data);
 
   return (
     <section>

@@ -1,4 +1,3 @@
-import React from "react";
 import { LuChevronDown, LuChevronUp } from "react-icons/lu";
 
 const Sortable = ({ children, handleSort, sort_by, align }) => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
@@ -16,7 +15,7 @@ const LoginForm = () => {
   } = useForm();
   const [token,setToken] = reactUseCookie("my_token");
   const handleLogin = async (data) => {
-    console.log(data);
+
     const res = await login(data);
     const result = await res.json();
     if (res.status === 200) {

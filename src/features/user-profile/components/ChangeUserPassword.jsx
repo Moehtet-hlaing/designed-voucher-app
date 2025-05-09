@@ -47,8 +47,8 @@ const ChangeUserPassword = () => {
               type="text"
               {...register("old_password", {
                 required: true,
-                minLength: 3,
-                maxLength: 20,
+                minLength: 8,
+                maxLength: 15,
               })}
               className={` bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
             block w-full p-2.5 ${
@@ -61,17 +61,17 @@ const ChangeUserPassword = () => {
             />
             {errors.old_password?.type === "required" && (
               <p role="alert" className="text-red-500 text-sm ">
-                Product name is required
+                Password is required
               </p>
             )}
             {errors.old_password?.type === "minLength" && (
               <p role="alert" className="text-red-500 text-sm ">
-                Product name must be at least 3 characters
+                Password must be at least 8 characters
               </p>
             )}
             {errors.old_password?.type === "maxLength" && (
               <p role="alert" className="text-red-500 text-sm ">
-                Product name must be less than 20 characters
+                Password must be less than 15 characters
               </p>
             )}
           </div>
