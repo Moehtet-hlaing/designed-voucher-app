@@ -38,18 +38,18 @@ const Pagination = ({
 
   return (
     <div className="">
-      <div className="flex justify-between items-center p-4">
+      <div className="md:flex justify-between items-center p-4">
 
-        <span className="text-sm text-gray-700 dark:text-gray-400">
+        <span className=" text-xs md:text-sm text-gray-700 dark:text-gray-400 mb-3 sm:mb-0 font-medium">
           Showing {from} to {to} of {total} Entries
         </span>
         <div className=" flex gap-5 justify-center items-center">
-          <span className="text-sm text-gray-700 dark:text-gray-400">
+          <span className=" text-[10px] md:text-sm text-gray-700 dark:text-gray-400">
             Page <b>{current_page ?? 0}</b> of <b>{last_page ?? 0}</b>
           </span>
           <select
             id=""
-             className="flex items-center justify-center h-10 text-sm font-medium border-y border rounded-lg border-gray-200  dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:opacity-50 disabled:pointer-events-none"
+             className="flex items-center justify-center h-10 text-[10px] sm:text-sm font-medium border-y border rounded-lg border-gray-200  dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:opacity-50 disabled:pointer-events-none"
             onChange={handlePageLimit}
             value={currentLimit}
           >
@@ -62,34 +62,34 @@ const Pagination = ({
             <button
               disabled={!prev}
               onClick={() => updateFetchUrl(prev)}
-              className="flex items-center justify-center size-10 font-medium text-slate-600 bg-transparent border 
+              className="flex items-center justify-center size-6 md:size-10 font-medium text-slate-600 bg-transparent border 
             border-slate-600 first:rounded-s-lg last:rounded-e-lg  dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:opacity-50 disabled:pointer-events-none"
             >
-              <LuChevronLeft />
+              <LuChevronLeft className="text-[12px] md:text-sm"/>
             </button>
             <button
               disabled={!first}
               onClick={() => updateFetchUrl(first)}
-              className="flex items-center justify-center size-10 font-medium text-slate-600 bg-transparent border 
+              className="flex items-center justify-center size-6 md:size-10 font-medium text-slate-600 bg-transparent border 
             border-slate-600 first:rounded-s-lg last:rounded-e-lg  dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:opacity-50 disabled:pointer-events-none"
             >
-              <LuChevronsLeft />
+              <LuChevronsLeft className="text-[12px] md:text-sm"/>
             </button>
             <button
               disabled={!last}
               onClick={() => updateFetchUrl(last)}
-              className="flex items-center justify-center size-10 font-medium text-slate-600 bg-transparent border 
+              className="flex items-center justify-center size-6 md:size-10 font-medium text-slate-600 bg-transparent border 
             border-slate-600 first:rounded-s-lg last:rounded-e-lg  dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:opacity-50 disabled:pointer-events-none first"
             >
-              <LuChevronsRight />
+              <LuChevronsRight className="text-[12px] md:text-sm"/>
             </button>
             <button
               disabled={!next}
               onClick={() => updateFetchUrl(next)}
-              className="flex items-center justify-center size-10 font-medium text-slate-600 bg-transparent border 
+              className="flex items-center justify-center size-6 md:size-10 font-medium text-slate-600 bg-transparent border 
             border-slate-600 first:rounded-s-lg last:rounded-e-lg  dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:opacity-50 disabled:pointer-events-none"
             >
-              <LuChevronRight />
+              <LuChevronRight className="text-[12px] md:text-sm"/>
             </button>
 
             {/* {links.map((link) => {

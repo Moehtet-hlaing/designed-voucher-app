@@ -16,14 +16,14 @@ const SaleRecordRow = ({record:{product_id,product:{product_name,price},quantity
 
 
   return (
-    <tr className="record-row border dark:border-gray-700 group">
+    <tr className="record-row border dark:border-gray-700 group text-[10px] sm:text-sm">
           
-    <td className="record-product-price px-6 py-4 text-end">{index+1}</td>
-    <th scope="row" className="record-product-name px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+    <td className="record-product-price px-2 py-2 sm:px-6 sm:py-4 text-end">{index+1}</td>
+    <th scope="row" className="record-product-name px-2 py-2 sm:px-6 sm:py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
       {product_name}
     </th>
-    <td className="record-product-price px-6 py-4 text-end">{price}</td>
-    <td className="px-6 py-4 text-end">
+    <td className="record-product-price px-2 py-2 sm:px-6 sm:py-4 text-end">{price}</td>
+    <td className="px-2 py-2 sm:px-6 sm:py-4 text-end">
       <button onClick={handleDecrease} className="quantity-sub hidden group-hover:inline-block border active:scale-90 border-blue-500 text-blue-500 p-0.5 rounded-full">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-3 pointer-events-none">
           <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
@@ -36,8 +36,8 @@ const SaleRecordRow = ({record:{product_id,product:{product_name,price},quantity
         </svg>
       </button>
     </td>
-    <td className="record-cost px-6 py-4 text-end">{cost}</td>
-    <td className="px-6 py-4 text-end table-cell">
+    <td className="record-cost px-2 py-2 sm:px-6 sm:py-4 text-end">{cost}</td>
+    <td className="px-2 py-2 sm:px-6 sm:py-4 text-end table-cell">
     <button
           onClick={handleDelete}
           className=" pointer-events-none duration-200 opacity-0 group-hover:opacity-100 group-hover:pointer-events-auto left-full top-3 translate-x-2 active:scale-75 bg-blue-100 p-2 rounded-lg"

@@ -13,8 +13,8 @@ const ShowDateTime = ({timestamp}) => {
   });
   return (
     <div>
-         <p className="text-xs">{currentDate}</p>
-         <p className="text-xs">{currentTime}</p>
+         <p className="text-[8px] sm:text-xs">{currentDate}</p>
+         <p className="text-[8px] sm:text-xs">{currentTime}</p>
     </div>
   )
 }

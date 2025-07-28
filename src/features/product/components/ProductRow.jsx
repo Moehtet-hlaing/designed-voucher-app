@@ -39,19 +39,19 @@ const ProductRow = ({ product: { id, product_name, price, created_at, updated_at
   };
   return (
     <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800
-     border-b dark:border-gray-700">
-      <td className="px-6 py-4">{id}</td>
+     border-b dark:border-gray-700 text-[10px] sm:text-sm">
+      <td className="px-2 py-2 sm:px-6 sm:py-4">{id}</td>
       <th
         scope="row"
-        className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        className="px-2 py-2 sm:px-6 sm:py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
       >
         {product_name}
       </th>
-      <td className="px-6 py-4 text-end">{price}</td>
-      <td className="px-6 py-4 text-end">
+      <td className="px-2 py-2 sm:px-6 sm:py-4 text-end ">{price}</td>
+      <td className="px-2 py-2 sm:px-6 sm:py-4 text-end">
        <ShowDateTime timestamp = {created_at}/> 
       </td>
-      <td className="px-6 py-4 text-end">
+      <td className="px-2 py-2 sm:px-6 sm:py-4 text-end">
        <ShowDateTime timestamp = {updated_at}/> 
       </td>
       <td className="px-4 py-2 text-end">
@@ -59,7 +59,7 @@ const ProductRow = ({ product: { id, product_name, price, created_at, updated_at
           <Link
           to = {`/dashboard/product-edit/${id}`}
             type="button"
-            className="flex justify-center items-center size-10 text-sm font-medium text-slate-600 bg-transparent border border-slate-600 rounded-s-lg
+            className="flex justify-center items-center size-6 sm:size-10 text-xs md:text-sm  font-medium text-slate-600 bg-transparent border border-slate-600 rounded-s-lg
             "
           >
             <HiPencil />
@@ -67,7 +67,7 @@ const ProductRow = ({ product: { id, product_name, price, created_at, updated_at
           <button
             onClick={handleDeleteBtn}
             type="button"
-            className="size-10 text-sm font-medium text-slate-600 bg-transparent border 
+            className="size-6 sm:size-10 text-xs md:text-sm font-medium text-slate-600 bg-transparent border 
             border-slate-600 rounded-e-lg  dark:border-white 
             dark:text-white flex justify-center items-center"
           >

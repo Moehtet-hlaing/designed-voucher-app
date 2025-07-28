@@ -1,8 +1,9 @@
 import React from 'react'
+import FeatureSection from '../components/FeatureSection'
 
 const AboutUsPage = () => {
   return (
-    <div>AboutUsPage</div>
+    <FeatureSection />
   )
 }
 

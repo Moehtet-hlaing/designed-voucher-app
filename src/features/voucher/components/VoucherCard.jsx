@@ -48,26 +48,26 @@ const VoucherCard = () => {
 
   if (isLoading) return <p>Loading...</p>;
   return (
-    <div className="flex gap-5">
-      <div id="printArea"  className="w-[14.8cm]  mx-auto p-5 bg-white shadow-lg rounded-lg">
+    <div className="sm:flex gap-5">
+      <div id="printArea"  className="sm:w-[14.8cm]  mx-auto p-5 bg-white shadow-lg rounded-lg">
         {/* Invoice Content */}
         <div className="p-6 border-t border-gray-200">
           <div className="flex justify-between mb-8">
             <div className="text-left w-1/2">
-              <h2 className="text-3xl font-bold mb-2">INVOICE</h2>
-              <p className="text-gray-600 ">{data?.data?.voucher_id}</p>
+              <h2 className="text-lg sm:text-3xl font-bold mb-2">INVOICE</h2>
+              <p className="text-gray-600 text-sm md:text-base ">{data?.data?.voucher_id}</p>
             </div>
             <div className="text-right w-1/2">
-              <p className="mb-2 ">Invoice to</p>
-              <p className="font-semibold">{data?.data?.customer_name}</p>
-              <p className="text-gray-600 ">{data?.data?.sale_date}</p>
+              <p className="mb-2 text-xs md:text-sm">Invoice to</p>
+              <p className="font-semibold text-xs md:text-sm">{data?.data?.customer_name}</p>
+              <p className="text-gray-600 text-xs md:text-sm">{data?.data?.sale_date}</p>
             </div>
           </div>
 
           {/* Invoice Table */}
           <table className="w-full mb-8">
             <thead>
-              <tr className="border-b border-gray-200">
+              <tr className="border-b border-gray-200 text-[12px]">
                 <th className="text-left py-3 ">No</th>
                 <th className="text-left py-3 ">Description</th>
                 <th className="text-right py-3 ">Qty</th>
@@ -75,36 +75,36 @@ const VoucherCard = () => {
                 <th className="text-right py-3 ">Total</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-[12px]">
               {data?.data?.records.map((record, index) => (
                 <tr key={index} className="border-b border-gray-100">
                   <td className="py-3 ">{index + 1}</td>
                   <td className="py-3 ">
                     {record.product.product_name}
                   </td>
-                  <td className="text-right py-3 ">{record.quantity}</td>
-                  <td className="text-right py-3 ">
+                  <td className="text-right py-3 text-xs ">{record.quantity}</td>
+                  <td className="text-right py-3 text-xs ">
                     {record.product.price}
                   </td>
-                  <td className="text-right py-3 ">{record.cost}</td>
+                  <td className="text-right py-3 text-xs ">{record.cost}</td>
                 </tr>
               ))}
             </tbody>
             <tfoot>
-              <tr className="border-b border-gray-200">
+              <tr className="border-b border-gray-200 text-sm sm:text-base">
                 <td colSpan={4} className="py-3  text-end">
                   Total
                 </td>
                 <td className="py-3  text-end">{parseFloat(data?.data?.total).toFixed(2)}</td>
               </tr>
-              <tr className="border-b border-gray-200">
+              <tr className="border-b border-gray-200 text-sm sm:text-base">
                 <td colSpan={4} className="py-3  text-end">
                   Tax
                 </td>
                 <td className="py-3  text-end">{parseFloat(data?.data?.tax).toFixed(2)}</td>
               </tr>
-              <tr className="border-b border-gray-200">
-                <td colSpan={4} className="py-3  text-end">
+              <tr className="border-b border-gray-200 text-sm sm:text-base font-medium">
+                <td colSpan={4} className="py-3  text-end ">
                   Net Total
                 </td>
                 <td className="py-3  text-end">{parseFloat(data?.data?.net_total).toFixed(2)}</td>
@@ -114,7 +114,7 @@ const VoucherCard = () => {
 
           {/* Payment Details */}
           <div className=" border-t border-gray-200 pt-6">
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center text-[12px] sm:text-base">
               <div>
                 <h3 className="font-semibold mb-3 ">
                   Payment Transfer to
@@ -142,7 +142,7 @@ const VoucherCard = () => {
           </div>
         </div>
       </div>
-      <div>
+      <div className=" flex justify-end gap-2 sm:flex-col sm:justify-start">
         <button onClick={handlePrint} className= " bg-blue-500 text-white px-4 py-2 rounded mt-4">Print</button>
         <button onClick={handlePdf} className= " bg-blue-500 text-white px-4 py-2 rounded mt-4">Download PDF</button>
       </div>

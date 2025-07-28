@@ -63,12 +63,12 @@ const CustomerInfo = () => {
           className=" flex flex-col h-full"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="grid grid-cols-1  gap-3">
+          <div className=" grid grid-cols-2 md:grid-cols-1  gap-3 mb-4 md:mb-0">
             <div className="col-span-1">
               <div className="">
                 <label
                   htmlFor="first_name"
-                  className={`block mb-2 text-sm font-medium text-gray-900 dark:text-white ${
+                  className={`block mb-2 text-[10px] md:text-sm font-medium text-gray-900 dark:text-white ${
                     errors.voucher_id ? "text-red-500" : ""
                   }`}
                 >
@@ -80,15 +80,15 @@ const CustomerInfo = () => {
                   {...register("voucher_id", {
                     required: true,
                   })}
-                  className={` bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
-       block w-full p-2.5 ${
+                  className={` bg-gray-50 border border-gray-300 text-gray-900 text-[10px] md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
+       block w-full p-1 md:p-2.5 ${
          errors.voucher_id
            ? "border-red-500 focus:border-red-500 focus:ring-red-500"
            : ""
        }`}
                 />
                 {errors.voucher_id?.type === "required" && (
-                  <p role="alert" className="text-red-500 text-sm ">
+                  <p role="alert" className="text-red-500 text-[10px] md:text-sm ">
                     Product name is required
                   </p>
                 )}
@@ -98,7 +98,7 @@ const CustomerInfo = () => {
               <div className="">
                 <label
                   htmlFor="first_name"
-                  className={`block mb-2 text-sm font-medium text-gray-900 dark:text-white ${
+                  className={`block mb-2 text-[10px] md:text-sm font-medium text-gray-900 dark:text-white ${
                     errors.customer_name ? "text-red-500" : ""
                   }`}
                 >
@@ -109,15 +109,15 @@ const CustomerInfo = () => {
                   {...register("customer_name", {
                     required: true,
                   })}
-                  className={` bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
-       block w-full p-2.5 ${
+                  className={` bg-gray-50 border border-gray-300 text-gray-900 text-[10px] md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
+       block w-full p-1 md:p-2.5 ${
          errors.customer_name
            ? "border-red-500 focus:border-red-500 focus:ring-red-500"
            : ""
        }`}
                 />
                 {errors.customer_name?.type === "required" && (
-                  <p role="alert" className="text-red-500 text-sm ">
+                  <p role="alert" className="text-red-500 text-[10px] md:text-sm ">
                     Customer name is required
                   </p>
                 )}
@@ -127,7 +127,7 @@ const CustomerInfo = () => {
               <div className="">
                 <label
                   htmlFor="first_name"
-                  className={`block mb-2 text-sm font-medium text-gray-900 dark:text-white ${
+                  className={`block mb-2 text-[10px] md:text-sm font-medium text-gray-900 dark:text-white ${
                     errors.customer_email ? "text-red-500" : ""
                   }`}
                 >
@@ -138,25 +138,25 @@ const CustomerInfo = () => {
                   {...register("customer_email", {
                     required: true,
                   })}
-                  className={` bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
-       block w-full p-2.5 ${
+                  className={` bg-gray-50 border border-gray-300 text-gray-900 text-[10px] md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
+       block w-full p-1 md:p-2.5 ${
          errors.customer_email
            ? "border-red-500 focus:border-red-500 focus:ring-red-500"
            : ""
        }`}
                 />
                 {errors.customer_email?.type === "required" && (
-                  <p role="alert" className="text-red-500 text-sm ">
+                  <p role="alert" className="text-red-500 text-[10px] md:text-sm ">
                     Customer email is required
                   </p>
                 )}
               </div>
             </div>
             <div className="col-span-1">
-              <div className="mb-8">
+              <div className="md:mb-8">
                 <label
                   htmlFor="first_name"
-                  className={`block mb-2 text-sm font-medium text-gray-900 dark:text-white ${
+                  className={`block mb-2 text-[10px] md:text-sm font-medium text-gray-900 dark:text-white ${
                     errors.sale_date ? "text-red-500" : ""
                   }`}
                 >
@@ -168,26 +168,26 @@ const CustomerInfo = () => {
                   {...register("sale_date", {
                     required: true,
                   })}
-                  className={` bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
-       block w-full p-2.5 ${
+                  className={` bg-gray-50 border border-gray-300 text-gray-900 text-[10px] md:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 
+       block w-full p-1 md:p-2.5 ${
          errors.sale_date
            ? "border-red-500 focus:border-red-500 focus:ring-red-500"
            : ""
        }`}
                 />
                 {errors.sale_date?.type === "required" && (
-                  <p role="alert" className="text-red-500 text-sm ">
+                  <p role="alert" className="text-red-500 text-[10px] md:text-sm ">
                     Sale date is required
                   </p>
                 )}
               </div>
             </div>
           </div>
-          <div className="flex flex-col justify-end items-end gap-3 mt-auto">
+          <div className="flex flex-col justify-end items-end gap-3 md:mt-auto">
             <div className="flex items-center">
               <label
                 htmlFor="redirect-to-detail"
-                className="me-2 text-sm font-medium text-gray-400 dark:text-gray-500"
+                className="me-2 text-[10px] md:text-sm font-medium text-gray-400 dark:text-gray-500"
               >
                 Redirect to voucher detail
               </label>
@@ -202,7 +202,7 @@ const CustomerInfo = () => {
             <div className="flex items-center">
               <label
                 htmlFor="all-correct"
-                className="me-2 text-sm font-medium text-gray-400 dark:text-gray-500"
+                className="me-2 text-[10px] md:text-sm font-medium text-gray-400 dark:text-gray-500"
               >
                 Make sure all fields are correct
               </label>
@@ -218,7 +218,7 @@ const CustomerInfo = () => {
             <button
               form="infoForm"
               type="submit"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-[10px] md:text-sm px-5 py-2.5  mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
               <div className="flex justify-between items-center">
                 Confirm Voucher

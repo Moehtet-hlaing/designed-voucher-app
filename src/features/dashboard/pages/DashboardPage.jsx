@@ -7,7 +7,7 @@ import { LuDatabaseBackup, LuFiles, LuMonitor, LuUsers } from "react-icons/lu";
 const DashboardPage = () => {
   return (
     <Container>
-      <section className="grid grid-cols-2 sm:grid-cols-3 gap-5">
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-5">
         <div className=" col-span-1">
           <ModuleBtn
             name={"Product Module"}
